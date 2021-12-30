@@ -1,6 +1,6 @@
 #!/bin/sh
 
-## The below is modified from https://github.com/activeeos/wireguard-docker
+## The below is modified from https://github.com/cmulk/wireguard-docker/blob/main/run
 
 # Find a Wireguard interface
 interfaces=`find /etc/wireguard/*.conf -type f`
