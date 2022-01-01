@@ -1,11 +1,11 @@
 # Modified version from https://github.com/cmulk/wireguard-docker/blob/main/Dockerfile.alpine
 FROM alpine:latest
 
-RUN apk update && apk --no-cache add wireguard-tools iptables ip6tables inotify-tools bind-tools iputils
+RUN apk update && apk --no-cache add wireguard-tools iptables ip6tables inotify-tools bind-tools iputils libqrencode
 
 # Copy the configuration files
 # Will be overloaded later by a dynamic volume mount
-COPY ./etc/wireguard/privatekey /etc/wireguard/privatekey
+# COPY ./etc/wireguard/wg0.privatekey /etc/wireguard/wg0.privatekey
 COPY ./etc/wireguard/wg0.conf /etc/wireguard/wg0.conf
 # Set the run script
 COPY ./scripts/run.sh /scripts/run.sh
